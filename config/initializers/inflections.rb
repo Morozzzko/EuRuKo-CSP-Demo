@@ -12,4 +12,5 @@
 
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym "EuRuKo"
+  inflect.acronym "CSP"
 end
