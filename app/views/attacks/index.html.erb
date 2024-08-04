@@ -1,0 +1,76 @@
+<div class="px-6 pt-24 sm:pt-32 lg:px-8">
+  <div class="mx-auto max-w-2xl text-center">
+    <p class="text-base font-semibold leading-7 text-indigo-600">Play around and find out</p>
+    <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Test CSP with a real attack</h2>
+    <p class="mt-6 text-lg leading-8 text-gray-600">Learn about content-security-policy by exposing yourself to certain attacks and see how different policies protect you</p>
+  </div>
+
+  <div class="mx-auto max-w-2xl">
+    <p class="mt-10">
+      This page contains an inventory of things you might get exposed to if your system contains a attack that allows bad actors to inject a code into your HTML.
+    </p>
+    <p class="mt-6">
+      Here's how it works: you choose an attack and review, which code will be injected into your page. Then you select, what kind of CSP policy will protect you. We've got 4 options:
+    </p>
+    <ul class="mt-6">
+      <li>
+        <strong>No CSP</strong> - the policy that allows everything
+      </li>
+      <li>
+        <strong>Rails' default</strong> – somewhat permissive policy that comes with Rails
+      </li>
+      <li>
+        <strong>Host-constrained</strong> – policy that only allows code from certain hosts, such as origin and CDNs
+      </li>
+      <li>
+        <strong>Strict-dynamic</strong> – only allows scripts which were explicitly marked as safe with a provided nonce, and the scripts added by them. Realistically, the strictest policy you'd get in a large project with GTM, frontend frameworks, and other JS-intensive systems.
+      </li>
+    </ul>
+    <p class="mt-6">
+      No worries – the attack won't run until you've pressed the button.
+    </p>
+  </div>
+</div>
+
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8">
+  <div class="mx-auto max-w-2xl">
+    <ul role="list" class="space-y-5">
+      <% @attacks.each do |attack| %>
+        <li class="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+          <div class="border-b border-gray-200 bg-white px-4 py-5 sm:px-6">
+            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
+              <div class="ml-4 mt-2">
+                <h3 class="text-base font-semibold leading-6 text-gray-900"><%= link_to attack.title, attack %></h3>
+              </div>
+              <div class="ml-4 mt-2 flex-shrink-0">
+                <%= link_to "Show", attack, class: 'rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50' %>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-5 sm:p-6">
+            <%= attack.description %>
+            <br />
+            <code>
+              <%= attack.body %>
+            </code>
+          </div>
+          <div class="px-4 py-4 sm:px-6">
+            <div class="flex space-x-3">
+              <div class="flex-shrink-0">
+                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+              </div>
+              <div class="min-w-0 flex-1">
+                <p class="text-sm font-semibold text-gray-900">
+                  <a href="#" class="hover:underline">@morozzzko</a>
+                </p>
+                <p class="text-sm text-gray-500">
+                  Added <%= distance_of_time_in_words(attack.created_at, Time.current) %> ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
