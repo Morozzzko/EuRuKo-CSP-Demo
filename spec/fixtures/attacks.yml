@@ -1,0 +1,7 @@
+one:
+  title: Alert!
+  description: |
+    Shows a fancy alert
+  secured_by: rails_default
+  body: |
+    <script>alert('Hello!')
