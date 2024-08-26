@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       scope module: :attacks do
         resource :rails_default, only: :show
         resource :host_constrained, only: :show
+        resource :no_csp, only: :show, controller: :no_csp
       end
     end
   end
