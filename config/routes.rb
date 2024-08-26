@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         resource :rails_default, only: :show
         resource :host_constrained, only: :show
         resource :no_csp, only: :show, controller: :no_csp
+        resource :strict_dynamic, only: :show, controller: :strict_dynamic
       end
     end
   end
