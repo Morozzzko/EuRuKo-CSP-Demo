@@ -52,19 +52,19 @@
                 <span>Safe</span>
                 <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5 bg-indigo-500"></span>
               </a>
-              <%= link_to no_csp_path(@attack), class: "group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:z-10" do %>
+              <%= link_to no_csp_path(@attack), data: { turbo: false }, class: "group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:z-10" do %>
                   <span>No CSP</span>
                   <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5 bg-transparent"></span>
               <% end %>
-              <%= link_to rails_default_path(@attack), class: "group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:z-10" do %>
+              <%= link_to rails_default_path(@attack), data: { turbo: false }, class: "group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:z-10" do %>
                 <span>Rails default</span>
                 <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5 bg-transparent"></span>
               <% end %>
-              <%= link_to host_constrained_path(@attack), class: "group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:z-10" do %>
+              <%= link_to host_constrained_path(@attack), data: { turbo: false }, class: "group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:z-10" do %>
                 <span>Host constrained</span>
                 <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5 bg-transparent"></span>
               <% end %>
-              <%= link_to strict_dynamic_path(@attack), class: "group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:z-10" do %>
+              <%= link_to strict_dynamic_path(@attack), data: { turbo: false }, class: "group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 focus:z-10" do %>
                 <span>Strict-dynamic</span>
                 <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5 bg-transparent"></span>
               <% end %>
