@@ -11,5 +11,4 @@ RSpec.describe "Attacks::NoCSPs", type: :request do
       expect(response.headers['Content-Security-Policy']).to be_nil
     end
   end
-
 end
