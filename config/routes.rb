@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     member do
       scope module: :attacks do
         resource :rails_default, only: :show
+        resource :host_constrained, only: :show
       end
     end
   end
