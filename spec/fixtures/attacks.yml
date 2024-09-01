@@ -5,3 +5,7 @@ one:
   secured_by: rails_default
   body: |
     <script>alert('Hello!')
+  author_uid: '123133'
+  author_nickname: idkwhothatisbut
+  author_image_url: https://cataas.com/cat
+  author_profile_url: https://github.com
