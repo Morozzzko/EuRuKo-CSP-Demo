@@ -79,7 +79,7 @@
             <p id="malicious_code"><%= @attack.body.html_safe %>”</p>
           </blockquote>
           <figcaption class="mt-10 flex items-center gap-x-6">
-            <img class="h-14 w-14 rounded-full bg-gray-50" src="<%= @attack.author.avatar_url %>" alt="">
+            <img class="h-14 w-14 rounded-full bg-gray-50" src="<%= @attack.author.image_url %>" alt="">
             <div class="text-base">
               <div class="font-semibold text-gray-900"><%= link_to @attack.author.at_name, @attack.author.profile_url %></div>
               <div class="mt-1 text-gray-500">Author of the attack</div>

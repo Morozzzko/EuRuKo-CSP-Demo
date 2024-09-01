@@ -53,3 +53,10 @@ group :development do
 end
 
 gem "tailwindcss-rails", "~> 2.7"
+
+gem "omniauth"
+gem "omniauth-rails_csrf_protection"
+gem "omniauth-github"
+gem "warden"
+
+gem "anyway_config"
