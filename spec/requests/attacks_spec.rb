@@ -24,8 +24,6 @@ RSpec.describe "/attacks", type: :request do
   }
 
   shared_context 'authenticated' do
-    include Warden::Test::Helpers
-
     before do
       login_as({ uid: '123', nickname: 'test', image_url: 'test', profile_url: 'test' })
     end
