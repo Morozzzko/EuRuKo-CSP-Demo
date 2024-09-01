@@ -22,13 +22,4 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_01_223330) do
     t.string "author_image_url", null: false
     t.string "author_profile_url", null: false
   end
-
-  create_table "vulnerabilities", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.string "secured_by"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 end
