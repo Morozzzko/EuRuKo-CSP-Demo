@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_01_184555) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_01_212912) do
   create_table "attacks", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
@@ -18,10 +18,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_01_184555) do
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "author_uid"
-    t.string "author_nickname"
-    t.string "author_image_url"
-    t.string "author_profile_url"
+    t.string "author_uid", null: false
+    t.string "author_nickname", null: false
+    t.string "author_image_url", null: false
+    t.string "author_profile_url", null: false
   end
 
   create_table "vulnerabilities", force: :cascade do |t|
