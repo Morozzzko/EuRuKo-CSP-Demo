@@ -67,7 +67,7 @@ class AttacksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attack_params
-      params.require(:attack).permit(:title, :description, :secured_by, :body).merge(
+      params.require(:attack).permit(:title, :description, :body).merge(
         author_uid: current_author.uid,
         author_nickname: current_author.nickname,
         author_image_url: current_author.image_url,
