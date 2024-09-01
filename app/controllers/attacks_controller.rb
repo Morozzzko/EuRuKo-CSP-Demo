@@ -1,6 +1,8 @@
 class AttacksController < ApplicationController
   before_action :set_attack, only: %i[ show edit update destroy ]
 
+  before_action :require_authentication!, only: %i[new create edit update destroy]
+
   # GET /attacks or /attacks.json
   def index
     @attacks = Attack.all
@@ -17,9 +19,6 @@ class AttacksController < ApplicationController
 
   # GET /attacks/1/edit
   def edit
-    unless request.env["warden"].authenticated?
-      head :forbidden
-    end
   end
 
   # POST /attacks or /attacks.json
@@ -69,5 +68,11 @@ class AttacksController < ApplicationController
     # Only allow a list of trusted parameters through.
     def attack_params
       params.require(:attack).permit(:title, :description, :secured_by, :body)
+    end
+
+    def require_authentication!
+      if current_author.guest?
+        head :forbidden
+      end
     end
 end

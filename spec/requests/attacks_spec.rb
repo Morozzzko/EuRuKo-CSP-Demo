@@ -23,6 +23,14 @@ RSpec.describe "/attacks", type: :request do
     {}
   }
 
+  shared_context 'authenticated' do
+    include Warden::Test::Helpers
+
+    before do
+      login_as({ uid: '123', nickname: 'test', image_url: 'test', profile_url: 'test' })
+    end
+  end
+
   describe "GET /index" do
     it "renders a successful response" do
       Attack.create! valid_attributes
@@ -40,6 +48,8 @@ RSpec.describe "/attacks", type: :request do
   end
 
   describe "GET /new" do
+    include_context 'authenticated'
+
     it "renders a successful response" do
       get new_attack_url
       expect(response).to be_successful
@@ -47,11 +57,7 @@ RSpec.describe "/attacks", type: :request do
   end
 
   describe "GET /edit" do
-    include Warden::Test::Helpers
-
-    before do
-      login_as({ uid: '123', nickname: 'test', image: 'test', profile_url: 'test' })
-    end
+    include_context 'authenticated'
 
     it "renders a successful response" do
       attack = Attack.create! valid_attributes
@@ -61,6 +67,8 @@ RSpec.describe "/attacks", type: :request do
   end
 
   describe "POST /create" do
+    include_context 'authenticated'
+
     context "with valid parameters" do
       it "creates a new Attack" do
         expect {
@@ -91,6 +99,8 @@ RSpec.describe "/attacks", type: :request do
   end
 
   describe "PATCH /update" do
+    include_context 'authenticated'
+
     context "with valid parameters" do
       let(:new_attributes) {
         skip("Add a hash of attributes valid for your model")
@@ -122,6 +132,8 @@ RSpec.describe "/attacks", type: :request do
   end
 
   describe "DELETE /destroy" do
+    include_context 'authenticated'
+
     it "destroys the requested attack" do
       attack = Attack.create! valid_attributes
       expect {
