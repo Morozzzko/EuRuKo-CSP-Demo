@@ -86,6 +86,9 @@
             <div class="min-w-0 flex-1">
               <p class="text-sm font-semibold text-gray-900">
                 <%= link_to @attack.author.at_name, @attack.author.profile_url, class: 'hover:underline' %>
+                <% if attack.author.uid == current_author.uid %>
+                  (that's you)
+                <% end %>
               </p>
               <p class="text-sm text-gray-500">
                 Added <%= distance_of_time_in_words(@attack.created_at, Time.current) %> ago

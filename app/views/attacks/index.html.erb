@@ -37,38 +37,7 @@
     <ul role="list" class="space-y-5">
       <% @attacks.each do |attack| %>
         <li class="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
-          <div class="border-b border-gray-200 bg-white px-4 py-5 sm:px-6">
-            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-              <div class="ml-4 mt-2">
-                <h3 class="text-base font-semibold leading-6 text-gray-900"><%= link_to attack.title, attack %></h3>
-              </div>
-              <div class="ml-4 mt-2 flex-shrink-0">
-                <%= link_to "Show", attack, class: 'rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50' %>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-5 sm:p-6">
-            <%= attack.description %>
-            <br />
-            <code>
-              <%= attack.body %>
-            </code>
-          </div>
-          <div class="px-4 py-4 sm:px-6">
-            <div class="flex space-x-3">
-              <div class="flex-shrink-0">
-                <img class="h-10 w-10 rounded-full" src="<%= attack.author.image_url %>" alt="">
-              </div>
-              <div class="min-w-0 flex-1">
-                <p class="text-sm font-semibold text-gray-900">
-                <%= link_to attack.author.at_name, attack.author.profile_url, class: 'hover:underline' %>
-                </p>
-                <p class="text-sm text-gray-500">
-                  Added <%= distance_of_time_in_words(attack.created_at, Time.current) %> ago
-                </p>
-              </div>
-            </div>
-          </div>
+          <%= render attack %>
         </li>
       <% end %>
     </ul>
