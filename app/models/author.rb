@@ -10,4 +10,6 @@ class Author
   def id = uid
 
   def guest? = false
+
+  def at_name = "@#{nickname}"
 end
