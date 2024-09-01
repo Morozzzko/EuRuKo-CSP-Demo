@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
-  def new
-    redirect_to "/auth/github"
+  def destroy
+    request.env['warden'].logout
+    flash[:notice] = "You have been logged out."
+
+    redirect_to attacks_path
   end
 
   def create
