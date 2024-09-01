@@ -43,6 +43,8 @@ group :development, :test do
   gem "rubocop-rspec", require: false
 
   gem "rspec-rails"
+
+  gem "kamal"
 end
 
 group :development do
