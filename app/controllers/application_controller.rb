@@ -8,4 +8,6 @@ class ApplicationController < ActionController::Base
       Guest.new
     end
   end
+
+  helper_method :current_author
 end
