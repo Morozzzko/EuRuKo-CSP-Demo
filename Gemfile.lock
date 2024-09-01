@@ -340,6 +340,8 @@ GEM
     uri (0.13.1)
     useragent (0.16.10)
     version_gem (1.1.4)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -378,6 +380,7 @@ DEPENDENCIES
   tailwindcss-rails (~> 2.7)
   turbo-rails
   tzinfo-data
+  warden
   web-console
 
 BUNDLED WITH

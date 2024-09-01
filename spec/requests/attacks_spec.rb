@@ -47,6 +47,12 @@ RSpec.describe "/attacks", type: :request do
   end
 
   describe "GET /edit" do
+    include Warden::Test::Helpers
+
+    before do
+      login_as({ uid: '123', nickname: 'test', image: 'test', profile_url: 'test' })
+    end
+
     it "renders a successful response" do
       attack = Attack.create! valid_attributes
       get edit_attack_url(attack)

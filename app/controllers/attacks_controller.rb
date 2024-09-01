@@ -17,6 +17,9 @@ class AttacksController < ApplicationController
 
   # GET /attacks/1/edit
   def edit
+    unless request.env["warden"].authenticated?
+      head :forbidden
+    end
   end
 
   # POST /attacks or /attacks.json
