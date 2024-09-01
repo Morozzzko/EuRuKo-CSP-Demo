@@ -2,7 +2,7 @@ class Guest
   include ActiveModel::Model
   include ActiveModel::Attributes
 
-  def id = "RandomGuest"
+  def uid = "RandomGuest"
 
   def guest? = true
 end
