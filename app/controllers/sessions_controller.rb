@@ -12,5 +12,8 @@ class SessionsController < ApplicationController
     profile_url = user_info["info"]["urls"]["GitHub"]
 
     request.env["warden"].set_user({ uid:, nickname:, image_url:, profile_url: })
+    flash[:notice] = "You have been logged in as #{nickname}"
+
+    redirect_to attacks_path
   end
 end
