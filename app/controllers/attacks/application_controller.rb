@@ -2,7 +2,7 @@ module Attacks
   class ApplicationController < ::ApplicationController
     before_action :set_attack
 
-    layout 'attacks'
+    layout "attacks"
 
     private
 
