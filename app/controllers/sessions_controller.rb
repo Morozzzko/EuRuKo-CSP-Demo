@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def destroy
-    request.env['warden'].logout
+    request.env["warden"].logout
     flash[:notice] = "You have been logged out."
 
     redirect_to attacks_path
