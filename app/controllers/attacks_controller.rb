@@ -3,6 +3,8 @@ class AttacksController < ApplicationController
 
   before_action :require_authentication!, only: %i[new create edit update destroy]
 
+  layout 'attacks_two_columns', only: %i[index]
+
   # GET /attacks or /attacks.json
   def index
     @attacks = Attack.all

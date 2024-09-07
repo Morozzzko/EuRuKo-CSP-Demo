@@ -1,36 +1,31 @@
-<div class="px-6 pt-24 sm:pt-32 lg:px-8">
-  <div class="mx-auto max-w-7xl text-center">
-    <p class="text-base font-semibold leading-7 text-indigo-600">Play around and find out</p>
-    <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Test CSP with a real attack</h2>
-    <p class="mt-6 text-lg leading-8 text-gray-600">Learn about content-security-policy by exposing yourself to certain attacks and see how different policies protect you</p>
-  </div>
+<% content_for :side_column do %>
+    <div class="mx-auto max-w-7xl">
+      <p>
+        This page contains an inventory of things you might get exposed to if your system contains a vulnerability that allows bad actors to inject code into your HTML.
+      </p>
+      <p class="mt-6">
+        You can test those attacks against 4 kinds of CSP:
+      </p>
+      <ul class="mt-6 space-y-1">
+        <li>
+          <strong>No CSP</strong> - the policy that allows everything
+        </li>
+        <li>
+          <strong>Rails' default</strong> – somewhat permissive policy that comes with Rails
+        </li>
+        <li>
+          <strong>Host-constrained</strong> – policy that only allows code from certain hosts, such as origin and CDNs
+        </li>
+        <li>
+          <strong>Strict-dynamic</strong> – only allows scripts which were explicitly marked as safe with a provided nonce, and the scripts added by them. Realistically, the strictest policy you'd get in a large project with GTM, frontend frameworks, and other JS-intensive systems.
+        </li>
+      </ul>
+      <p class="mt-6">
+        No worries – the attack won't run until you've pressed the button.
+      </p>
+    </div>
 
-  <div class="mx-auto max-w-7xl">
-    <p class="mt-10">
-      This page contains an inventory of things you might get exposed to if your system contains a attack that allows bad actors to inject a code into your HTML.
-    </p>
-    <p class="mt-6">
-      Here's how it works: you choose an attack and review, which code will be injected into your page. Then you select, what kind of CSP policy will protect you. We've got 4 options:
-    </p>
-    <ul class="mt-6">
-      <li>
-        <strong>No CSP</strong> - the policy that allows everything
-      </li>
-      <li>
-        <strong>Rails' default</strong> – somewhat permissive policy that comes with Rails
-      </li>
-      <li>
-        <strong>Host-constrained</strong> – policy that only allows code from certain hosts, such as origin and CDNs
-      </li>
-      <li>
-        <strong>Strict-dynamic</strong> – only allows scripts which were explicitly marked as safe with a provided nonce, and the scripts added by them. Realistically, the strictest policy you'd get in a large project with GTM, frontend frameworks, and other JS-intensive systems.
-      </li>
-    </ul>
-    <p class="mt-6">
-      No worries – the attack won't run until you've pressed the button.
-    </p>
-  </div>
-</div>
+<% end %>
 
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8">
   <div class="mx-auto max-w-7xl">

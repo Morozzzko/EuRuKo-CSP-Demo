@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="h-full bg-gray-100">
+  <head>
+    <title><%= content_for(:title) || "EuRuKo CSP Demo" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload", nonce: true%>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", nonce: true%>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="h-full">
+    <div class="min-h-full">
+      <%= render partial: 'shared/header' %>
+      <main class="-mt-24 pb-8">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+          <!-- Main 3 column grid -->
+          <div class="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8">
+            <div class="grid grid-cols-1 gap-4">
+              <section aria-labelledby="section-2-title">
+                <div class="overflow-hidden rounded-lg bg-white shadow">
+                  <div class="p-6">
+                    <%= yield(:side_column) %>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 lg:col-span-2">
+              <section aria-labelledby="section-1-title">
+                <div class="overflow-hidden rounded-lg bg-white shadow">
+                  <div class="p-6">
+                    <%= yield %>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+    <%= render partial: 'shared/footer' %>
+  </body>
+</html>
