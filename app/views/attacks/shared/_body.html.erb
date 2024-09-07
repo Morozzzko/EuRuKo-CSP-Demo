@@ -12,8 +12,8 @@
             </div>
           </div>
           <div class="mt-5 flex justify-center sm:mt-0">
-            <%= link_to @attack, class: "flex items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" do %>
-              Back to details
+            <%= link_to attacks_path, class: "flex items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" do %>
+              Back to attacks
             <% end %>
           </div>
         </div>
@@ -113,7 +113,7 @@
         <figure class="mt-10 flex flex-auto flex-col justify-between">
           <blockquote class="text-lg leading-8 text-gray-900">
             <p>“This one is sourced from the database. Let's pretend that it was indeed a result of a vulnerability and not an conscious decision to embed data without properly sanitizing it. Here it goes...</p>
-            <p id="malicious_code"><%= @attack.body.html_safe %>”</p>
+            <p id="malicious_code"><%= content_for(:attack_override) || @attack.body.html_safe %>”</p>
           </blockquote>
           <figcaption class="mt-10 flex items-center gap-x-6">
             <img class="h-14 w-14 rounded-full bg-gray-50" src="<%= @attack.author.image_url %>" alt="">
