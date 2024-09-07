@@ -7,7 +7,7 @@ class AttacksController < ApplicationController
 
   # GET /attacks or /attacks.json
   def index
-    @attacks = Attack.all
+    @attacks = Attack.all.order(created_at: :desc)
   end
 
   # GET /attacks/1 or /attacks/1.json
