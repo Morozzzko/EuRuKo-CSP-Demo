@@ -50,6 +50,39 @@
         </div>
 
       </div>
+
+      <div class="flex justify-between divide-y divide-gray-200 border-t border-gray-200 bg-gray-50 sm:divide-x sm:divide-y-0">
+        <div class="px-6 py-5 text-center text-sm font-medium">
+          <%= link_to @attack, data: { turbo: false } do %>
+            <span class="text-gray-600">Go to</span>
+            <span class="text-gray-900">Safe / Escaped</span>
+          <% end %>
+        </div>
+        <div class="px-6 py-5 text-center text-sm font-medium">
+          <%= link_to no_csp_path(@attack), data: { turbo: false } do %>
+            <span class="text-gray-600">See with</span>
+            <span class="text-gray-900">No CSP</span>
+          <% end %>
+        </div>
+        <div class="px-6 py-5 text-center text-sm font-medium">
+          <%= link_to rails_default_path(@attack), data: { turbo: false } do %>
+            <span class="text-gray-600">See with</span>
+            <span class="text-gray-900">Rails default</span>
+          <% end %>
+        </div>
+        <div class="px-6 py-5 text-center text-sm font-medium">
+          <%= link_to host_constrained_path(@attack), data: { turbo: false } do %>
+            <span class="text-gray-600">See with</span>
+            <span class="text-gray-900">Host-constrained</span>
+          <% end %>
+        </div>
+        <div class="px-6 py-5 text-center text-sm font-medium">
+          <%= link_to strict_dynamic_path(@attack), data: { turbo: false } do %>
+            <span class="text-gray-600">See with</span>
+            <span class="text-gray-900">strict-dynamic</span>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </section>
