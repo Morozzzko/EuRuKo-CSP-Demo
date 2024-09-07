@@ -27,14 +27,14 @@
 
 <% end %>
 
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8">
+<div class="mx-auto max-w-7xl ">
   <div class="mx-auto max-w-7xl">
-    <ul role="list" class="space-y-5">
-      <% @attacks.each do |attack| %>
-        <li class="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
-          <%= render attack %>
-        </li>
-      <% end %>
-    </ul>
+      <ul role="list" class="space-y-5 columns-2xs">
+        <% @attacks.each do |attack| %>
+          <li class="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+            <%= render attack %>
+          </li>
+        <% end %>
+      </ul>
   </div>
 </div>
