@@ -16,6 +16,6 @@ class Author
   def at_name = "@#{nickname}"
 
   def hoodie?
-    HOODIES.include?(nicknmae)
+    HOODIES.include?(nickname)
   end
 end
