@@ -1,4 +1,5 @@
 <% content_for :current_security, 'Safe' %>
 <% content_for(:attack_override) { @attack.body } %>
+<% content_for(:exposing_to_override) { "You are now browsing" } %>
 <%= render partial: 'attacks/shared/body' %>
 

@@ -6,7 +6,7 @@
         <div class="sm:flex sm:items-center sm:justify-between">
           <div class="sm:flex sm:space-x-5">
             <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
-              <p class="text-sm font-medium text-gray-600">You are now exposing yourself to</p>
+              <p class="text-sm font-medium text-gray-600"><%= content_for(:exposing_to_override) || 'You are now exposing yourself to' %></p>
               <p class="text-xl font-bold text-gray-900 sm:text-2xl"><%= @attack.title %></p>
               <p class="text-sm font-medium text-gray-600 whitespace-pre-line"><%= @attack.description %></p>
             </div>
