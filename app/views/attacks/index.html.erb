@@ -31,7 +31,7 @@
   <div class="mx-auto max-w-7xl">
       <ul role="list" class="space-y-5 columns-2xs">
         <% @attacks.each do |attack| %>
-          <li class="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+          <li class="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow break-inside-avoid-column">
             <%= render attack %>
           </li>
         <% end %>
